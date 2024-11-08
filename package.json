@@ -1,0 +1,43 @@
+{
+  "name": "ActiveBrowserLogger",
+  "version": "1.0.0",
+  "description": "A tool to log active browser URLs and time spent",
+  "author": "Your Name <your-email@example.com>",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+   "build": "electron-builder --win --linux"
+
+  },
+  "dependencies": {
+    "active-win": "^8.2.1",
+    "screenshot-desktop": "^1.15.0",
+    "sharp": "^0.33.5",
+    "tesseract.js": "^5.1.1"
+  },
+  "devDependencies": {
+    "electron": "^33.0.2",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.activebrowserlogger.app",
+    "productName": "ActiveBrowserLogger",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!node_modules",
+      "!dist"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": ["AppImage", "deb"]
+    }
+  }
+}
